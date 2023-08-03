@@ -1,0 +1,9 @@
+
+9
+	task2.iml,6\6\66a7c4a7c4f79696533e2476969e0608ca8bc004
+9
+	file2.txt,c\2\c2edf7b002d0354039a8aaba3bc53180caf3d248
+9
+	file1.txt,c\e\ce1be0ff4065a6e9415095c95f25f47a633cef2b
+=
+src/Main.java,9\2\924f089edb4af5ee45c8a9d1129cd28e2b368138

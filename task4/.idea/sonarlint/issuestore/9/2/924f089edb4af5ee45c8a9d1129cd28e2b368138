@@ -1,0 +1,8 @@
+
+g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¿ıµå›1
+g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Èıµå›1
+0
+java:S1220""Move this file to a named package.
+i
+java:S2095"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(îË‹ó8õÿµå›1
+Z	java:S106)"9Replace this use of System.out or System.err by a logger.(äıúàùÿÿÿÿ8–€¶å›1

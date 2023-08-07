@@ -1,6 +1,7 @@
-import java.io.File;
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
-import java.util.Scanner;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class Main {
     static float x;
@@ -11,28 +12,23 @@ public class Main {
 
     public static void main(String[] args) {
         try {
-            Scanner scanner = new Scanner(System.in);
-            File file = new File(scanner.nextLine());
-            scanner = new Scanner(file);
+            String circleDataFile = args[0];
+            String pointsDataFile = args[1];
 
-            while (scanner.hasNextFloat()) {
-                centerX = scanner.nextFloat();
-                centerY = scanner.nextFloat();
-                radius = scanner.nextFloat();
-            }
+            BufferedReader circleReader = new BufferedReader(new FileReader(circleDataFile));
+            BufferedReader pointsReader = new BufferedReader(new FileReader(pointsDataFile));
 
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
+            String[] circleTokens = circleReader.readLine().split(" ");
+            centerX = Float.parseFloat(circleTokens[0]);
+            centerY = Float.parseFloat(circleTokens[1]);
+            String radiusToken = circleReader.readLine();
+            radius = Float.parseFloat(radiusToken);
 
-        try {
-            Scanner scanner2 = new Scanner(System.in);
-            File file = new File(scanner2.nextLine());
-            scanner2 = new Scanner(file);
-
-            while (scanner2.hasNextFloat()) {
-                x = scanner2.nextFloat();
-                y = scanner2.nextFloat();
+            String pointLine;
+            while ((pointLine = pointsReader.readLine()) != null) {
+                String[] pointTokens = pointLine.split(" ");
+                x = Float.parseFloat(pointTokens[0]);
+                y = Float.parseFloat(pointTokens[1]);
 
                 float distance = (x - centerX) * (x - centerX) + (y - centerY) * (y - centerY);
                 if (distance < radius * radius) {
@@ -43,8 +39,9 @@ public class Main {
                     System.out.println(0);
                 }
             }
-
         } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
